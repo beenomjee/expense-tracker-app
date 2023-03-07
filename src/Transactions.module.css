@@ -1,0 +1,103 @@
+.transaction {
+  display: flex;
+  animation: left-to-right 500ms 1 backwards;
+  animation-delay: calc(var(--index) * 100ms);
+  position: relative;
+}
+
+@keyframes left-to-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.transaction .left {
+  flex-basis: calc(100% - 5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: rgb(10, 10, 10);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgb(25, 25, 75);
+}
+
+.transaction .right {
+  width: 5px;
+  background-color: var(--i);
+}
+
+.transaction .editBox {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -100%) scaleY(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgb(10, 10, 10);
+  padding: 5px 10px;
+  border: 1px solid rgb(25, 25, 75);
+  transform-origin: center bottom;
+  transition: transform 100ms;
+}
+.transaction:hover .editBox {
+  transform: translate(-50%, -100%) scaleY(1);
+}
+
+.transaction .editBox button {
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.transaction .editBox button:nth-child(1) {
+  color: #2ecc71;
+}
+.transaction .editBox button:nth-child(2) {
+  color: #c0392b;
+}
+
+.container {
+  max-height: 597px;
+  margin: 10vh 0;
+  overflow: auto;
+  width: min(350px, 100vw);
+  padding: 0 20px;
+}
+.container h2 {
+  font-weight: 500;
+  line-height: 33px;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.container > div {
+  margin-bottom: 10px;
+}
+
+.container > .clearAll {
+  text-align: right;
+}
+
+.container > .clearAll > button {
+  background: none;
+  border: none;
+  outline: none;
+  color: #e7e7e7;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.container > .clearAll > button:hover {
+  color: #fff;
+}

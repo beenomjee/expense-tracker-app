@@ -1,0 +1,29 @@
+.container {
+  max-height: 597px;
+  margin: 10vh 0;
+  overflow: hidden;
+  width: min(350px, 100vw);
+  padding: 0 20px;
+}
+.container h2 {
+  font-weight: 500;
+  line-height: 33px;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.container .graphContainer {
+  animation: right-to-left 500ms 1 backwards;
+  animation-delay: calc(var(--i) * 200ms);
+}
+
+@keyframes right-to-left {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
